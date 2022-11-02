@@ -22,7 +22,7 @@ namespace TestExcelbd.Repository.Models
         //  public virtual Country Country { get; set; }
 
        // public int CustomerId { get; set; }
-        public ICollection<CustomerAddress> Customers { get; set; }
+        public ICollection<CustomerAddress> CustomerAddress { get; set; }
 
         public Country Country { get; set; }
         public int CountryId { get; set; }
