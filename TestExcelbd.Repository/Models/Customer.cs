@@ -13,16 +13,20 @@ namespace TestExcelbd.Repository.Models
         [Key]
         public int ID { get; set; }
    
-       // [Key, ForeignKey("Country")]
-      //  public int CountryID { get; set; }
-
         public string CustomerName { get; set; }
         public string FatherName { get; set; }
         public string MotherName { get; set; }
         public int MaritalStatus { get; set; }
         public byte[] CustomerPhoto { get; set; }
 
-        //  public ICollection<Country> Countries { get; set; }
-        public virtual Country Country { get; set; }
+        //  public virtual Country Country { get; set; }
+
+       // public int CustomerId { get; set; }
+        public ICollection<CustomerAddress> Customers { get; set; }
+
+        public Country Country { get; set; }
+        public int CountryId { get; set; }
+
+
     }
 }

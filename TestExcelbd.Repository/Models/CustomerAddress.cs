@@ -11,10 +11,12 @@ namespace TestExcelbd.Repository.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ID { get; set; }
-        public int CustomerId { get; set; }
+       
         public string CustomerAddressDetails { get; set; }
 
-        public ICollection<Customer> Customers { get; set; }
+        public int CustomerId { get; set; }
+
+        public Customer Customer { get; set; }
 
     }
 }
