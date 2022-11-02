@@ -9,9 +9,12 @@ namespace TestExcelbd.Repository.Models
     public class Customer
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [ForeignKey("Country")]
         [Key]
         public int ID { get; set; }
-        public int CountryId { get; set; }
+   
+       // [Key, ForeignKey("Country")]
+      //  public int CountryID { get; set; }
 
         public string CustomerName { get; set; }
         public string FatherName { get; set; }
@@ -19,6 +22,7 @@ namespace TestExcelbd.Repository.Models
         public int MaritalStatus { get; set; }
         public byte[] CustomerPhoto { get; set; }
 
-        public ICollection<Country> Countries { get; set; }
+        //  public ICollection<Country> Countries { get; set; }
+        public virtual Country Country { get; set; }
     }
 }
