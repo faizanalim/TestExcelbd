@@ -9,7 +9,7 @@ namespace TestExcelbd.Repository.Repositories
     {
         Customer GetById(int id);
         IEnumerable<Customer> GetAll();
-        void Add(Customer entity);
+        public void Add(Customer entity);
         void Remove(Customer entity);
     }
 }

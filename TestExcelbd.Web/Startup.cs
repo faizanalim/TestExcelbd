@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TestExcelbd.Repository.EF_Code;
 using TestExcelbd.Repository.Repositories;
+using TestExcelbd.Repository.UnitOfWorks;
 
 namespace TestExcelbd.Web
 {
@@ -31,6 +32,7 @@ namespace TestExcelbd.Web
 
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddTransient<ICustomerRepository, CustomerRepository>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddControllersWithViews();
         }
 

@@ -12,5 +12,26 @@ namespace TestExcelbd.Repository.Repositories
         {
 
         }
+
+        public void Add(Customer entity)
+        {
+            _context.Add(entity);
+
+        }
+
+        //public Customer GetById(int id)
+        //{ 
+
+        //}
+        // public IEnumerable<Customer> GetAll()
+        // { 
+        //// return _context.Countries.Get
+        // }
+
+        public void Remove(Customer entity)
+        {
+
+
+        }
     }
 }

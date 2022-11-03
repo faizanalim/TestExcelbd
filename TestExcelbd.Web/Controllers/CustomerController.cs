@@ -5,17 +5,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TestExcelbd.Repository.EF_Code;
+using TestExcelbd.Repository.UnitOfWorks;
 
 namespace TestExcelbd.Web.Controllers
 {
     public class CustomerController : Controller
     {
 
-        private readonly CustomerContext _context;
+        //  private readonly CustomerContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public CustomerController(CustomerContext context)
+        public CustomerController(IUnitOfWork unitOfWork)
         {
-            _context = context;
+            //   _context = context;
+            _unitOfWork = unitOfWork;
         }
         // GET: CustomerController
         public ActionResult Index()
