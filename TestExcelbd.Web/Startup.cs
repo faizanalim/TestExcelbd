@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TestExcelbd.Repository.EF_Code;
+using TestExcelbd.Repository.Repositories;
 
 namespace TestExcelbd.Web
 {
@@ -27,6 +28,9 @@ namespace TestExcelbd.Web
         {
             services.AddDbContext<CustomerContext>(options =>
                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddTransient<ICustomerRepository, CustomerRepository>();
             services.AddControllersWithViews();
         }
 
